@@ -130,7 +130,7 @@ public class EspExceptionDecoderWindow {
         String esp8266gdb = Settings.get(EspExceptionDecoderOptions.ESP8266_GDB);
         String esp32gdb = Settings.get(EspExceptionDecoderOptions.ESP32_GDB);
         if (esp8266 && esp8266gdb != null && !esp8266gdb.isEmpty()) {
-            return new File(esp32gdb);
+            return new File(esp8266gdb);
         }
 
         if (esp32 && esp32gdb != null && !esp32gdb.isEmpty()) {
