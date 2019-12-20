@@ -1,15 +1,15 @@
 <idea-plugin>
-  <id>com.your.company.unique.plugin.id</id>
+  <id>com.kluev.espexceptiondecoder</id>
   <name>ESPExceptionDecoder</name>
   <version>1.0</version>
-  <vendor email="kluev.andrew@gmai.com">Kluev ANdrew</vendor>
+  <vendor email="kluev.andrew@gmail.com">Kluev Andrew</vendor>
 
   <description><![CDATA[
       Exception Stack Trace Decoder for ESP8266 and ESP32
     ]]></description>
 
   <change-notes><![CDATA[
-      Inital port of https://github.com/me-no-dev/EspExceptionDecoder
+      Port of https://github.com/me-no-dev/EspExceptionDecoder
     ]]>
   </change-notes>
 
@@ -21,14 +21,19 @@
   <depends>com.intellij.modules.platform</depends>
 
   <extensions defaultExtensionNs="com.intellij">
-    <toolWindow id="EspExceptionDecoder" secondary="true" icon="/intellij-esp-exception-decoder/plus.png" anchor="right"
-                factoryClass="com.kluev.espexceptiondecoder.EspExceptionDecoderWindowFactory"/>
+<!--    <toolWindow id="EspExceptionDecoder" secondary="true" icon="/intellij-esp-exception-decoder/plus.png" anchor="right"-->
+<!--                factoryClass="com.kluev.espexceptiondecoder.EspExceptionDecoderWindowFactory"/>-->
 
-    <applicationConfigurable instance="com.kluev.espexceptiondecoder.XtensaGdbOption" displayName="EspExceptionDecoder"/>
+    <applicationConfigurable instance="com.kluev.espexceptiondecoder.settings.EspExceptionDecoderOptions" displayName="EspExceptionDecoder"/>
   </extensions>
 
   <actions>
     <!-- Add your actions here -->
   </actions>
 
+  <project-components>
+    <component>
+      <implementation-class>com.kluev.espexceptiondecoder.EspExceptionDecoderComponent</implementation-class>
+    </component>
+  </project-components>
 </idea-plugin>
